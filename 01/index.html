@@ -59,11 +59,11 @@
             </div>
             <nav>
               <ul id="Navigation" class="list-inline collapse navbar-collapse">
-                <li><a href="index.html#schedule" title="Schedule">О мероприятии</a></li>
-                <li><a href="index.html#speakers" title="Speakers">Спикеры</a></li>
-                <li><a href="index.html#partners" title="Partners">Партнеры</a></li>
-                <li><a href="index.html#faq" title="FAQ">FAQ</a></li>
-                <li><a href="index.html#pricing" title="Pricing">Билеты</a></li>
+                <li><a href="#schedule" title="Schedule">О мероприятии</a></li>
+                <li><a href="#speakers" title="Speakers">Спикеры</a></li>
+                <li><a href="#partners" title="Partners">Партнеры</a></li>
+                <li><a href="#faq" title="FAQ">FAQ</a></li>
+                <li><a href="#pricing" title="Pricing">Билеты</a></li>
                 <li><a href="index.html#venue" title="Venue">Место проведения</a></li>
               </ul>
             </nav>
@@ -788,5 +788,17 @@
 <script src="js/onevent.js"></script> 
 <script src="js/jquery.countdown.js"></script> 
 <script src="../js/jquery.fitvids.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+            $('a[href*=#]').bind("click", function(e){
+                var anchor = $(this);
+                $('html, body').stop().animate({
+                    scrollTop: $(anchor.attr('href')).offset().top
+                }, 1000);
+                e.preventDefault();
+            });
+            return false;
+        });
+</script>
 </body>
 </html>
